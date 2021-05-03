@@ -1,0 +1,12 @@
+INDEX VERSION 1.3+C:\Users\Connor\Desktop\workspace\CaphEmptyTemplateforAngularJS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+867794341.index
+30035532.index
+727860075.index
+3828162553.index
+58586945.index
+49919408.index
+1777832652.index
+1273544435.index
+292256830.index
+3183510480.index
+139741708.index

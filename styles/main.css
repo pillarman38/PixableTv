@@ -1,0 +1,1268 @@
+
+.play-button {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0px auto;
+  overflow: hidden;
+  position: relative;
+}
+.left {
+  height: 100%;
+  float: left;
+  background-color: #fff;
+  width: 36%;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+
+.triangle-1 {
+  
+}
+.right {
+  height: 100%;
+  float: right;
+  width: 36%;
+  
+  background-color: #fff;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.paused .left {
+width: 0%;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+}
+.paused .right {
+	background-color: #1C1CD8;
+	  width: 0;
+      height: 0;
+      border-top: 25px solid transparent;
+      border-left: 25px solid red;
+      border-right: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+
+}
+
+.forwardTriangle {
+	display: inline;
+  float: left;
+  width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 25px solid #68696B;
+    border-bottom: 25px solid transparent;
+}
+
+.rewindTriangle{
+	display: inline;
+	float: right;
+	width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 25px solid #68696B;
+    border-bottom: 25px solid transparent;
+}
+
+
+
+@font-face {
+    font-family: "SamsungSVD_Latin Light";
+    src: url("../fonts/SamsungSVDLight_Latin.ttf");
+}
+@font-face {
+    font-family: "SamsungSVD_Latin Medium";
+    src: url("../fonts/SamsungSVDMedium_Latin.ttf");
+}
+
+body {
+    margin: 0;
+    font: 32px 'SamsungSVD_Latin Light';
+}
+
+.font-info {
+    color: #EEE;
+    font: 24px 'SamsungSVD_Latin Medium';
+}
+
+.font-info-dark {
+    color: #a6a6a6;
+    font: 24px 'SamsungSVD_Latin Medium';
+}
+
+.font-body {
+    color: #fff; /*#7F7F7F;*/
+    font: 28px 'SamsungSVD_Latin Light';
+}
+
+.font-subheader {
+    color: #EEE;
+    font: 28px 'SamsungSVD_Latin Medium';
+}
+
+.font-label {
+    color: #EEE;
+    font: 32px 'SamsungSVD_Latin Medium';
+}
+
+.font-label-talk-in-playlist {
+    color: #EEE;
+    font: 21px 'SamsungSVD_Latin Medium';
+}
+
+.font-caption {
+    color: #EEE;
+    font: 48px 'SamsungSVD_Latin Medium';
+}
+
+
+
+.welcome {
+    position: absolute;
+    width: 100%;
+    height: 680px;
+    background-color: #02021A; /*#13161E;*/
+    color: #FFFFFF;
+    z-index: 9;
+    transition: opacity 1s ease-in;
+    font-size: 80px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 400px;
+}
+.welcome .caph{
+    color: #4984FC;
+    font-size: 300px;
+    font-weight: bold;
+    text-shadow: 5px 5px white;
+}
+
+.welcome.fade-out {
+    opacity: 0;
+    transition: opacity 2s;
+}
+#blur {
+	height:100%;
+    width:100%;
+    text-align:center;
+    background-size:cover;
+    
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+.wrapper {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background-size: cover;
+
+}
+.vidInfo {
+	background: rgba(100, 98, 98, 0.5); 
+	height: 100%;
+	width: 40%;
+	padding: 20px;
+	float: right;
+}
+.logo {
+    position: absolute;
+    top: 35px;
+    left: 112px;
+    height: 104px;
+    width: 194px;
+    z-index: 1;
+    font: bold 85px 'SamsungSVD_Latin Medium';
+    color: #4984FC;
+    text-shadow: 2px 2px white;
+}
+.logo:before {
+    content: 'CAPH';
+}
+.top-right-area {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    height: 82px;
+    width: 96px;
+}
+
+.overview {
+	background: rgba(100, 98, 98, 0.5); 
+	height: 100%;
+	width: 40%;
+	padding: 20px;
+	float: right;  
+}
+#plot{
+	overflow: hidden;
+	height: 400px;
+	color: white;
+}
+#overviewDisp {
+	color: white;
+}
+#titleDisp{
+	color: white;
+}
+.playlist-info {
+    height: 74px;
+}
+
+.playlist-info .image {
+    float: left;
+    width: 54px;
+    height: 54px;
+}
+
+.playlist-info .text {
+    float: left;
+    margin-left: 10px;
+}
+
+.overview .name {
+    position: relative;
+    width: 850px;
+    z-index: 1;
+}
+
+.overview .speakers {
+    position: relative;
+}
+
+.overview .more {
+    position: relative;
+    height: 70px;
+    line-height:70px;
+}
+
+.overview.desc {
+    font-size: 40px;
+    margin: 0 0 0 112px;
+}
+
+.opacity-dark {
+    opacity: .3;
+}
+
+.opacity-light {
+    opacity: 1;
+}
+
+.stage-transition {
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+.btn-wrapper {
+    position: relative;
+    margin: 70px 0 0 88px; /*64 112-24=88*/
+    height: 92px;
+}
+
+.btn-wrapper-playlist {
+    position: relative;
+    margin: 70px 0 0 88px;
+    height: 92px;
+}
+
+.btn-gap {
+    position: relative;
+    float: left;
+    margin-left: 24px; /*48*/
+}
+
+.list-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 60%;
+    height: 100%;/*498px;*/
+    
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+.list-wrapper-playlist {
+    top: 718px;
+}
+
+.list-area {
+    width: 1920px;
+    height: 250px; /*314px;*/
+    margin-bottom: 40px;
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+    margin-bottom: 60px;
+}
+
+
+.list-area .title {
+    width: 100%;
+    height: 28px;
+    margin: 0 0 25px 112px;
+}
+
+.list-area .title-opacity {
+    opacity: .4;
+}
+
+.list-container {
+    position: absolute;
+    width: 60%;
+    height: 1000px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.list-container-settings {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    margin-top: 0;
+}
+.list-container-audio {
+    position: absolute;
+    overflow: hidden;
+    background-color: red;
+    width: 100%;
+    height: 300px;
+    margin-top: 0;
+}
+.list-scroll-wrapper {
+    left: 50px;
+}
+
+.list-category {
+    position: absolute;
+    top: 80px;
+    -webkit-transition: transform .5s ease-in-out;
+}
+
+.watch-anything {
+    color: #EEE;
+    font: 60px 'SamsungSVD_Latin Medium';
+    font-weight: bold;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.shelf-resume-watching {
+    border-top: 32px solid rgba(255, 43, 6, 0.6);
+    border-right: 20px solid transparent;
+    width: 200px;
+    margin-top: 16px;
+    position: absolute;
+}
+
+.shelf-resume-watching:before {
+    content: 'Resume watching';
+    margin: -32px 0 0 16px;
+    position: absolute;
+}
+
+.shelf-resume-progress-bar {
+    position: absolute;
+    width: 467px;
+    background-color: #a6a6a6;
+    height: 8px;
+    bottom: 0;
+    opacity: .95;
+    z-index: 1;
+}
+
+.shelf-resume-progress-bar .active {
+    width: 1px;
+    background-color: rgb(255, 43, 6);
+    opacity: .9;
+    z-index: 2;
+}
+
+.item {
+    position: relative;
+    width: 320px; /*474px;*/
+    height: 200px; /*265px;*/
+    -webkit-box-sizing: border-box;
+    margin: 0 14px 0 0; /*0 24px 0 0;*/
+
+}
+
+.item-blank {
+    border: 0;
+}
+
+.item-playlist {
+    width: 200px;
+}
+
+.item .content {
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+}
+
+.item .content span {
+    position: absolute;
+    margin: 15px;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 43, 6);
+}
+
+.item .content .text {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px 24px 15px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.item .content .playlist-text {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px 24px 15px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.item.focused {
+    border: 4px solid #EEE;
+}
+
+.item-blank.focused {
+    border: 0;
+}
+
+.related-play-list {
+    position: absolute;
+   
+    width: 100%;
+    height: 100px;
+    top: 25px;
+}
+.selected-home-video-folder {
+	position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 1000px;
+    top: 25px;
+}
+.move-container {
+    position: absolute;
+    left: 0;
+    -webkit-transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.page {
+    position:absolute;
+    opacity: 1;
+    -webkit-transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.page-fade-in {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.page-index-fade-out {
+    opacity: 0;
+    -webkit-transform: translate3d(150px,0,0);
+}
+
+.page-playlist-fade-out {
+    opacity: 0;
+    -webkit-transform: translate3d(-150px,0,0);
+}
+
+.player-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: black;
+    overflow: hidden;
+    display: block;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 90px auto;
+    border: 5px solid rgba(255, 255, 255, .2);
+    border-left-color: #FFF;
+    -webkit-animation: load 1.5s infinite linear;
+}
+
+@-webkit-keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.caph-checkbox {
+    width: 715px;
+    border: 4px solid rgba(0, 0, 0, 0);
+}
+.caph-checkbox:before {
+    font-size: 40px;
+}
+.caph-checkbox.focused, .caph-dialog-button.focused {
+    border: 4px solid #1C1CD8;
+}
+.caph-dialog-button.focused {
+    background-color: #1C1CD8;
+}
+.caph-dialog-button {
+    border: 4px solid #414141;
+}
+.caph-dialog .content {
+    text-align: left;
+    font-size: 40px;
+}
+
+
+/* player */
+.player {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.player .caption-middle {
+    position: absolute;
+    bottom: 576px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.player .caption-bottom {
+    position: absolute;
+    bottom: 136px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+.player .controls-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: opacity .3s ease-in-out;
+}
+.player .controls-bar.fade-out {
+    opacity: 0;
+}
+
+.player .controls-bar .process-bar {
+    position: relative;
+    width: 1392px;
+    height: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, .35);
+}
+
+.player .controls-bar .load-process {
+    width: 1392px;
+    height: 8px;
+    background-color: #969696;
+    -webkit-transform: translate3d(-1392px, 0, 0);
+}
+
+.player .controls-bar .play-process {
+    position: relative;
+    top: -8px;
+    width: 1392px;
+    height: 8px;
+    background-color: #EB2E2E;
+    -webkit-transform: translate3d(-1392px, 0, 0);
+}
+
+.player .controls-bar .opacity-panel {
+    width: 100%;
+    height: 128px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: 120px;
+}
+
+.player .controls-bar .setting-panel {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+.setting-panel {
+	width: 500px;
+	height: 500px;
+	background-color: red;
+}
+.font-player-time {
+    color: #EEE;
+    font: 24px 'SamsungSVD_Latin Medium';
+}
+
+.player .controls-bar .current-time {
+    float: left;
+    margin: -112px 0 0 32px;
+}
+
+.player .controls-bar .duration {
+    float: right;
+    margin: -112px 32px 0 0;
+}
+
+.player .controls-bar .operations {
+    width: 900px;
+    height: 128px;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, .25); /*#808080; opacity: .25;*/
+    margin: 0 auto;
+}
+
+.player .controls-bar .additional-buttons {
+    width: 400px;
+    height: 128px;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, .25);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.player-loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 490px auto;
+    border: 10px solid rgba(255, 255, 255, .2);
+    border-left-color: #FFF;
+    -webkit-animation: load 1.5s infinite linear;
+}
+
+.view-location {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-player {
+    position: relative;
+    width: 180px;
+    height: 128px;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 15px;
+}
+.btn-player-setting {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    display: table-cell;
+    border-radius: 5px;
+}
+.btn-icon-player-setting {
+    position: absolute;
+    top: 11px;
+    left: 15px;
+}
+.btn-player-setting.focused {
+    background-color: #1C1CD8;
+}
+.btn-icon-player {
+    position: absolute;
+    top: 37px;
+    left: 60px;
+}
+.btn-player.focused {
+    background-color: #1C1CD8;
+}
+
+::cue {
+    color: #fff;
+    text-shadow: -1px 0 #161A23, 0 1px #161A23, 1px 0 #161A23, 0 -1px #161A23;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 200px;
+    text-align: left;
+}
+
+/* button */
+.btn {
+    position: relative;
+    height: 82px;
+    width: 100px;
+    
+    font: bold 28px 'SamsungSVD_Latin Medium';
+    color: #FFF;
+    background-color: rgba(105, 105, 105, 0.9);
+    border-radius: 15px;
+}
+
+.btn.focused {
+    background-color: #1C1CD8;
+    color: #FFF;
+}
+
+.icon-caph {
+    width: 100px;
+    height: 100px;
+    opacity: 0.8;
+    
+}
+.btn-icon {
+    position: absolute;
+    top: 13px;
+    left: 22px;
+}
+.icon-caph-play {
+    background-position: 0 -2052px;
+}
+.icon-caph-pause {
+    background-position: 0 -1836px;
+}
+.icon-caph-rewind {
+    background-position: 0 -3564px;
+}
+.icon-caph-forward {
+    background-position: 0 -864px;
+}
+.icon-caph-prev {
+    background-position: 0 -2214px;
+}
+.icon-caph-next {
+    background-position: 0 -1674px;
+}
+.icon-caph-return {
+    background-position: 0 -3402px;
+}
+.icon-caph-setting {
+    background-position: 0 -4212px;
+}
+.btn-play:before {
+    content: 'PLAY';
+    line-height:80px;
+    margin: 0 44px 0 82px;
+}
+.btn-return{
+    width: 96px;
+    background-color: rgba(105, 105, 105, 0.2);
+}
+.btn-setting {
+    width: 96px;
+    background-color: rgba(105, 105, 105, 0.2);
+}
+.header-btns {
+    width: 30%;
+    height: 50px;
+    text-align: center;
+    background-color: rgba(105, 105, 105, 0.2);
+}
+.header-txt {
+	margin-top: 20px;
+}
+.hide {
+    display: none;
+}
+#custom-seekbar {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  height: 7px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .2);
+}
+#statusBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 7px;
+  background-color: rgba(255, 165, 0, .8);
+  transition-duration: 0.2s
+}
+#timeBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 7px;
+  background-color: rgba(255, 165, 0, .8);
+  transition-duration: 0.2s
+}
+
+.header {
+    top: 0;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 0px;
+    background-image: radial-gradient(circle at 50% 50%, #ff822e, #dd480d);
+    transition: all .3s ease;  
+
+}
+.button {
+    display: inline-block;
+    float: left;
+    background-color: color;
+    width: 20%;
+    height: 100%;
+    top: 0;
+	  line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    cursor: pointer;
+    
+	border-radius: 5px;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+}
+
+.text-light {
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;		
+	width: 100%;
+	margin: auto;
+	font-size: 200px;
+	text-align: center;
+	
+}
+#title {
+	color: white;
+	margin-top: 50px;
+}
+.welcome {
+	
+}
+@keyframes Gradient {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+
+.caph-dialog {
+	color: white;
+}
+}
+
+.caph-list-container {
+    position: absolute;
+    top: 80px;
+    -webkit-transition: transform .5s ease-in-out;
+}
+.caph-list-wrapper {
+	background-color: blue;
+	
+    overflow: hidden;
+    width: 100%;
+    height: 100%;/*498px;*/
+    
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+.itemss {
+
+}
+.list-area-settings {
+	width: 100%;
+    height: 100px; /*314px;*/
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.list-area-audio {
+	width: 100%;
+    height: 100px; /*314px;*/
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.grrr {
+	width: 150px;
+	height: 100px;
+	margin: 10px; 
+	padding: 10px;
+	color: white;
+	background-color: purple;
+}
+
+.hex-brick{
+    background-image: radial-gradient(circle at 50% 50%, #ff822e, #dd480d);
+    width: 30px;
+	height: 17px;
+	position: absolute;
+	top: 5px;
+    animation-name: fade;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 2s;
+	text-align: center;
+    vertical-align: middle;
+	-webkit-animation-iteration-count: infinite;
+	z-index: -1;
+}
+			
+			.h2{
+				transform: rotate(60deg);
+				-webkit-transform: rotate(60deg);
+			}
+			
+			.h3{
+				transform: rotate(-60deg);
+				-webkit-transform: rotate(-60deg);
+			}
+			
+			.gel{
+				height: 30px;
+				width: 30px;	
+				transition: all .3s;
+				-webkit-transition: all .3s;
+				position: absolute;
+		        top: 50%;
+		        left: 50%;
+			}
+			
+			.center-gel{
+				margin-left: -15px;
+				margin-top: -15px;
+				
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+			}
+			
+			.c1{
+				margin-left: -47px;
+				margin-top: -15px;
+			}
+			
+			.c2{
+				margin-left: -31px;
+				margin-top: -43px;
+			}
+			
+			.c3{
+				margin-left: 1px;
+				margin-top: -43px;
+			}
+			
+			.c4{
+				margin-left: 17px;
+				margin-top: -15px;
+			}
+			.c5{
+				margin-left: -31px;
+				margin-top: 13px;
+			}
+			
+			.c6{
+				margin-left: 1px;
+				margin-top: 13px;
+			}
+			
+			.c7{
+				margin-left: -63px;
+				margin-top: -43px;
+			}
+			
+			.c8{
+				margin-left: 33px;
+				margin-top: -43px;
+			}
+			
+			.c9{
+				margin-left: -15px;
+				margin-top: 41px;
+			}
+			
+			.c10{
+				margin-left: -63px;
+				margin-top: 13px;
+			}
+			
+			.c11{
+				margin-left: 33px;
+				margin-top: 13px;
+			}
+			
+			.c12{
+				margin-left: -15px;
+				margin-top: -71px;
+			}
+			
+			.c13{
+				margin-left: -47px;
+				margin-top: -71px;
+			}
+			
+			.c14{
+				margin-left: 17px;
+				margin-top: -71px;
+			}
+			
+			.c15{
+				margin-left: -47px;
+				margin-top: 41px;
+			}
+			
+			.c16{
+				margin-left: 17px;
+				margin-top: 41px;
+			}
+			
+			.c17{
+				margin-left: -79px;
+				margin-top: -15px;
+			}
+			
+			.c18{
+				margin-left: 49px;
+				margin-top: -15px;
+			}
+			
+			.c19{
+				margin-left: -63px;
+				margin-top: -99px;
+			}
+			
+			.c20{
+				margin-left: 33px;
+				margin-top: -99px;
+			}
+			
+			.c21{
+				margin-left: 1px;
+				margin-top: -99px;
+			}
+			
+			.c22{
+				margin-left: -31px;
+				margin-top: -99px;
+			}
+			
+			.c23{
+				margin-left: -63px;
+				margin-top: 69px;
+			}
+			
+			.c24{
+				margin-left: 33px;
+				margin-top: 69px;
+			}
+			
+			.c25{
+				margin-left: 1px;
+				margin-top: 69px;
+			}
+			
+			.c26{
+				margin-left: -31px;
+				margin-top: 69px;
+			}
+			
+			.c27{
+				margin-left: -79px;
+				margin-top: -15px;
+			}
+			
+			.c28{
+				margin-left: -95px;
+				margin-top: -43px;
+			}
+			
+			.c29{
+				margin-left: -95px;
+				margin-top: 13px;
+			}
+			
+			.c30{
+				margin-left: 49px;
+				margin-top: 41px;
+			}
+			
+			.c31{
+				margin-left: -79px;
+				margin-top: -71px;
+			}
+			
+			.c32{
+				margin-left: -111px;
+				margin-top: -15px;
+			}
+			
+			.c33{
+				margin-left: 65px;
+				margin-top: -43px;
+			}
+			
+			.c34{
+				margin-left: 65px;
+				margin-top: 13px;
+			}
+			
+			.c35{
+				margin-left: -79px;
+				margin-top: 41px;
+			}
+			
+			.c36{
+				margin-left: 49px;
+				margin-top: -71px;
+			}
+			
+			.c37{
+				margin-left: 81px;
+				margin-top: -15px;
+			}
+			
+			.r1{
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .2s;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .2s;
+			}
+			
+			.r2{
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .4s;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .4s;
+			}
+			
+			.r3{
+				animation-name: pulse;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .6s;
+				-webkit-animation-name: pulse;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .6s;
+			}
+			
+			.r1 > .hex-brick{
+				animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .2s;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .2s;
+			}
+			
+			.r2 > .hex-brick{
+				animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .4s;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .4s;
+			}
+			
+			.r3 > .hex-brick{
+				animation-name: fade;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: .6s;
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-delay: .6s;
+			}
+			
+			
+			@keyframes pulse{
+				0%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+				
+				50%{
+					-webkit-transform: scale(0.01);
+					transform: scale(0.01);
+				}
+				
+				100%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+			
+			@keyframes fade{
+				0%{
+					background-image: radial-gradient(circle at 50% 50%, #ff822e, #dd480d);
+				}
+				
+				50%{
+					background: #90BBBF;
+				}
+				
+				100%{
+					background: #ABF8FF;
+				}
+			}
+			
+			@-webkit-keyframes pulse{
+				0%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+				
+				50%{
+					-webkit-transform: scale(0.01);
+					transform: scale(0.01);
+				}
+				
+				100%{
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+			
+			@-webkit-keyframes fade{
+				0%{
+					background: #ABF8FF;
+				}
+				
+				50%{
+					background: #389CA6;
+				}
+				
+				100%{
+					background: #ABF8FF;
+				}
+			}
+						

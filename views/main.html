@@ -1,0 +1,42 @@
+<div id="move-container" class="move-container">
+    <div class="header" ng-hide="currentDepth === DEPTH.PLAYER">
+    	<div focusable="{depth: DEPTH.INDEX}" class="btn btn-gap header-btns" ng-show="currentDepth === DEPTH.INDEX || currentDepth === DEPTH.HOMEVIDLIST || currentDepth === DEPTH.SELECTEDHOMEVIDFILE" on-focused="buttonFocusInDetail($event, $originalEvent)" on-selected="moviesDepth()">
+            <p class="header-txt">Movies</p>
+        </div>
+        <div focusable="{depth: DEPTH.INDEX}" class="btn btn-gap header-btns" ng-show="currentDepth === DEPTH.INDEX || currentDepth === DEPTH.HOMEVIDLIST || currentDepth === DEPTH.SELECTEDHOMEVIDFILE" on-focused="buttonFocusInDetail($event, $originalEvent)" on-selected="homeVidsDepth()">
+            <p class="header-txt">Home Videos</p>
+        </div>
+    </div>
+    
+    <div class="btn-wrapper" ng-show="currentDepth === DEPTH.DETAIL">
+        <div focusable="{depth: DEPTH.DETAIL, initialFocus: true, name: 'btnPlay'}" class="btn btn-gap" ng-class="{'btn-play':true, 'btn-resume': false}" on-focused="buttonFocusInDetail($event, $originalEvent)" on-selected="selectPlayButton()">
+            <div class="btn-icon icon-caph icon-caph-play"></div>
+        </div>
+    </div>
+</div>
+
+<div class="overview" ng-hide="currentDepth === DEPTH.PLAYER">
+	<div id="title">
+	    <p>{{overview.title}}</p>
+	</div>
+	<div id="plot">
+	    <p>{{overview.overview}}</p>
+	</div>
+    <div ng-if="overview.resolution == '3840x2160'">
+    	<img src="../images/4k.png" width="200" height="50"/>
+    </div>
+    <div ng-if="overview.audio[0]['codec_name'] == 'truehd'">
+        <img src="../images/atmos.png" width="100" height="100"/>
+    </div>
+</div>
+
+<div class="list-wrapper" ng-class="currentDepth === DEPTH.INDEX">
+    <div class="list-category">
+	    <related-play-list ng-show="currentDepth === DEPTH.HOMEVIDLIST" title="Related talks"></related-play-list>
+		
+		<selected-home-video-folder class="related-play-list" id="{{CATEGORY.SELECTEDHOMEVIDFILE}}" ng-show="currentDepth === DEPTH.SELECTEDHOMEVIDFILE" ng-hide="currentDepth === DEPTH.DETAIL || currentDepth === DEPTH.PLAYER || currentDepth === DEPTH.INDEX || currentDepth === DEPTH.HOMEVIDLIST" title="Related talks"></selected-home-video-folder>
+	    
+	    <play-list id="{{CATEGORY.COLORS}}" ng-show="currentDepth === DEPTH.INDEX" ng-hide="currentDepth === DEPTH.SETTING5 || currentDepth === DEPTH.SELECTEDHOMEVIDFILE || currentDepth === DEPTH.DETAIL || currentDepth === DEPTH.PLAYER || currentDepth === DEPTH.HOMEVIDLIST"></play-list>
+	</div>
+</div>
+

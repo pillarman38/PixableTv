@@ -1,0 +1,16 @@
+<p style="color: white;">Subtitles</p>
+<div class="list-area-settings"> 
+    <caph-list direction="vertical" items="item in dataCategory[3]" container-class="list-container-settings" wrapper-class="list-scroll-wrapper">
+       	<div focusable="{depth: DEPTH.PLAYER, nextFocus: {down: 'btnPlay'}}" class="btn btn-gap" on-focused="buttonFocusInDetail($event, $originalEvent)" on-selected="selectedSubs(item)">
+       		<div>{{item['tags']['language']}}</div>
+        </div>    
+    </caph-list>
+</div>
+<p style="color: white;">Audio</p>
+<div class="list-area-audio"> 
+    <caph-list direction="vertical" items="item in dataCategory[4]" container-class="list-container-settings" wrapper-class="list-scroll-wrapper">
+       	<div focusable="{depth: DEPTH.PLAYER, nextFocus: {down: 'btnPlay'}}" class="btn btn-gap" on-focused="buttonFocusInDetail($event, $originalEvent)" on-selected="selectedAudio(item)">
+       		<div>{{item['tags']['language']}}</div>
+        </div>    
+    </caph-list>
+ </div>
